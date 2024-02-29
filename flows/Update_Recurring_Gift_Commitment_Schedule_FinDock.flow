@@ -34,7 +34,7 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
         <versionSegment>1</versionSegment>
     </actionCalls>
-    <apiVersion>59.0</apiVersion>
+    <apiVersion>60.0</apiVersion>
     <assignments>
         <description>Sets the parameters on UpdateGiftCommitmentSchedule such as StartDate and EndDate from the values of UpdateDatesScreen.</description>
         <name>CreateUpdateDatesRequest</name>
@@ -855,7 +855,7 @@
                     <inputParameters>
                         <name>label</name>
                         <value>
-                            <stringValue>Select Schedule</stringValue>
+                            <stringValue>$Label.UpdateRecurringScheduleFlow.scheduleSelectionDatatableHeader</stringValue>
                         </value>
                     </inputParameters>
                     <inputParameters>
@@ -1010,7 +1010,7 @@
                     <inputParameters>
                         <name>label</name>
                         <value>
-                            <stringValue>Campaign</stringValue>
+                            <stringValue>$Label.UpdateRecurringScheduleFlow.campaign</stringValue>
                         </value>
                     </inputParameters>
                     <inputParameters>
@@ -1095,7 +1095,7 @@
                     <inputParameters>
                         <name>label</name>
                         <value>
-                            <stringValue>Select Schedule</stringValue>
+                            <stringValue>$Label.UpdateRecurringScheduleFlow.scheduleSelectionDatatableHeader</stringValue>
                         </value>
                     </inputParameters>
                     <inputParameters>
@@ -1385,7 +1385,7 @@
                     <inputParameters>
                         <name>label</name>
                         <value>
-                            <stringValue>Campaign</stringValue>
+                            <stringValue>$Label.UpdateRecurringScheduleFlow.campaign</stringValue>
                         </value>
                     </inputParameters>
                     <inputParameters>
@@ -1470,7 +1470,7 @@
                     <inputParameters>
                         <name>label</name>
                         <value>
-                            <stringValue>Select Schedule</stringValue>
+                            <stringValue>$Label.UpdateRecurringScheduleFlow.scheduleSelectionDatatableHeader</stringValue>
                         </value>
                     </inputParameters>
                     <inputParameters>
@@ -1844,7 +1844,7 @@
                     <inputParameters>
                         <name>label</name>
                         <value>
-                            <stringValue>Campaign</stringValue>
+                            <stringValue>$Label.UpdateRecurringScheduleFlow.campaign</stringValue>
                         </value>
                     </inputParameters>
                     <inputParameters>
@@ -1929,7 +1929,7 @@
     <variables>
         <description>Stores the action the flow user selects to perform on the recurring schedule. Valid values are UpgradeDowngrade, UpdatePaymentMethod and UpdateDates.
 
-Stores the action the flow user selects to perform on the recurring schedule.</description>
+            Stores the action the flow user selects to perform on the recurring schedule.</description>
         <name>action</name>
         <dataType>String</dataType>
         <isCollection>false</isCollection>
