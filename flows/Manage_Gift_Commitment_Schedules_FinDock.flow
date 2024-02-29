@@ -681,7 +681,7 @@
         <dataType>Boolean</dataType>
         <expression>IF(({!GiftTransactionAmount})&lt;1, false, true)</expression>
     </formulas>
-    <interviewLabel>$Label.ManageGiftCommitmentScheduleFlow.label {!$Flow.CurrentDateTime}</interviewLabel>
+    <interviewLabel>Manage Gift Commitment Schedules {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Manage Gift Commitment Schedules</label>
     <loops>
         <description>Repeats actions in a loop for each gift commitment record in the GiftCommitments from GetGiftCommitments variable.</description>
@@ -1284,7 +1284,7 @@
                     <inputParameters>
                         <name>label</name>
                         <value>
-                            <stringValue>$Label.ManageGiftCommitmentScheduleFlow.campaign</stringValue>
+                            <stringValue>Campaign</stringValue>
                         </value>
                     </inputParameters>
                     <inputParameters>
