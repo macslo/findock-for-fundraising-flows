@@ -1539,7 +1539,7 @@
                     <inputParameters>
                         <name>label</name>
                         <value>
-                            <stringValue>$Label.ManageGiftCommitmentScheduleFlow.commitmentSelectionDatatableHeader</stringValue>
+                            <stringValue>Select Gift Commitment</stringValue>
                         </value>
                     </inputParameters>
                     <inputParameters>
