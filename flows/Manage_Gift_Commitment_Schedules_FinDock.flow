@@ -308,6 +308,13 @@
                 <elementReference>GetGiftCmtFromGiftCommitmentId.Id</elementReference>
             </value>
         </assignmentItems>
+        <assignmentItems>
+            <assignToReference>RecurringGiftCommitmentScheduleRequest.OutreachSourceCodeId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>OutreachSourceCodeLookup.recordId</elementReference>
+            </value>
+        </assignmentItems>
         <connector>
             <targetReference>CreateRecurringGiftCommitmentScheduleRecord</targetReference>
         </connector>
@@ -1221,6 +1228,44 @@
                         <errorMessage>Enter an amount that&apos;s greater than 0.</errorMessage>
                         <formulaExpression>{!ValidateGiftTransactionAmountFormula}</formulaExpression>
                     </validationRule>
+                </fields>
+                <fields>
+                    <name>OutreachSourceCodeLookup</name>
+                    <extensionName>flowruntime:lookup</extensionName>
+                    <fieldType>ComponentInstance</fieldType>
+                    <inputParameters>
+                        <name>fieldApiName</name>
+                        <value>
+                            <stringValue>OutreachSourceCodeId</stringValue>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>label</name>
+                        <value>
+                            <stringValue>$Label.ManageGiftCommitmentScheduleFlow.outreachSourceCode</stringValue>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>objectApiName</name>
+                        <value>
+                            <stringValue>GiftCommitmentSchedule</stringValue>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>maxValues</name>
+                        <value>
+                            <numberValue>1.0</numberValue>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>recordId</name>
+                        <value>
+                            <stringValue>GiftCommitmentSchedule.OutreachSourceCodeId</stringValue>
+                        </value>
+                    </inputParameters>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>true</isRequired>
+                    <storeOutputAutomatically>true</storeOutputAutomatically>
                 </fields>
                 <inputParameters>
                     <name>width</name>
