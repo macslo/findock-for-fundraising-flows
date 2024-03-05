@@ -1242,7 +1242,7 @@
                     <inputParameters>
                         <name>label</name>
                         <value>
-                            <stringValue>$Label.ManageGiftCommitmentScheduleFlow.outreachSourceCode</stringValue>
+                            <stringValue>Source Code</stringValue>
                         </value>
                     </inputParameters>
                     <inputParameters>

@@ -83,6 +83,13 @@
                 <elementReference>UpdateDatesCommitmentUpdateReasonPicklist</elementReference>
             </value>
         </assignmentItems>
+        <assignmentItems>
+            <assignToReference>UpdateGiftCommitmentSchedule.OutreachSourceCodeId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>UpdateDatesOutreachSourceCode.recordId</elementReference>
+            </value>
+        </assignmentItems>
         <connector>
             <targetReference>UpdateRecurringGiftCommitmentSchedule</targetReference>
         </connector>
@@ -168,6 +175,13 @@
             <operator>Assign</operator>
             <value>
                 <elementReference>FinDockDependentPaymentMethod.bottomValue</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>UpdateGiftCommitmentSchedule.OutreachSourceCodeId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>UpdatePaymentMethodOutreachSourceCode.recordId</elementReference>
             </value>
         </assignmentItems>
         <connector>
@@ -284,6 +298,13 @@
             <value>
                 <elementReference>FinDockPaymentMethodPicklistDownUpgrade.bottomValue</elementReference>
             </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>UpdateGiftCommitmentSchedule.OutreachSourceCodeId</assignToReference>
+            <operator>Assign</operator>
+                <value>
+                    <elementReference>UpgradeDowngradeOutreachSourceCodeId.recordId</elementReference>
+                </value>
         </assignmentItems>
         <connector>
             <targetReference>UpdateRecurringGiftCommitmentSchedule</targetReference>
@@ -511,6 +532,7 @@
             <label>Update Payment Method</label>
         </rules>
     </decisions>
+    <description>Updates a Gift Commitment Schedule record for a recurring type of schedule.</description>
     <dynamicChoiceSets>
         <description>Stores all the Update Reason field values for the Gift Commitment Schedule object for use as options for CommitmentUpdateReasonPicklists.</description>
         <name>CommitmentUpdateReasonPicklistChoiceSet</name>
@@ -978,6 +1000,44 @@
                 <name>UpdateDatesAdditionalInfoSection_Column1</name>
                 <fieldType>Region</fieldType>
                 <fields>
+                    <name>UpdateDatesOutreachSourceCode</name>
+                    <extensionName>flowruntime:lookup</extensionName>
+                    <fieldType>ComponentInstance</fieldType>
+                    <inputParameters>
+                        <name>fieldApiName</name>
+                        <value>
+                            <stringValue>OutreachSourceCodeId</stringValue>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>label</name>
+                        <value>
+                            <stringValue>Source Code</stringValue>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>objectApiName</name>
+                        <value>
+                            <stringValue>GiftCommitmentSchedule</stringValue>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>maxValues</name>
+                        <value>
+                            <numberValue>1.0</numberValue>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>recordId</name>
+                        <value>
+                            <elementReference>UpdateDatesSelectSchdDataTable.firstSelectedRow.OutreachSourceCode.Id</elementReference>
+                        </value>
+                    </inputParameters>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>true</isRequired>
+                    <storeOutputAutomatically>true</storeOutputAutomatically>
+                </fields>
+                <fields>
                     <name>UpdateDatesCommitmentUpdateReasonPicklist</name>
                     <choiceReferences>CommitmentUpdateReasonPicklistChoiceSet</choiceReferences>
                     <dataType>String</dataType>
@@ -1335,6 +1395,44 @@
                         <errorMessage>Enter a date that&apos;s on or after the schedule’s start date and on or before the schedule’s end date.</errorMessage>
                         <formulaExpression>{!ValidateUpdatePaymentMethodEffectiveStartDateFormula}</formulaExpression>
                     </validationRule>
+                </fields>
+                <fields>
+                    <name>UpdatePaymentMethodOutreachSourceCode</name>
+                    <extensionName>flowruntime:lookup</extensionName>
+                    <fieldType>ComponentInstance</fieldType>
+                    <inputParameters>
+                        <name>fieldApiName</name>
+                        <value>
+                            <stringValue>OutreachSourceCodeId</stringValue>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>label</name>
+                        <value>
+                            <stringValue>Source Code</stringValue>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>objectApiName</name>
+                        <value>
+                            <stringValue>GiftCommitmentSchedule</stringValue>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>maxValues</name>
+                        <value>
+                            <numberValue>1.0</numberValue>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>recordId</name>
+                        <value>
+                            <elementReference>UpdatePaymentMethodSelectSchdDataTable.firstSelectedRow.OutreachSourceCode.Id</elementReference>
+                        </value>
+                    </inputParameters>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>true</isRequired>
+                    <storeOutputAutomatically>true</storeOutputAutomatically>
                 </fields>
                 <fields>
                     <name>UpdatePaymentMethodCommitmentUpdateReasonPicklist</name>
@@ -1794,6 +1892,44 @@
                         <errorMessage>Enter a date that&apos;s on or after the schedule’s start date and on or before the schedule’s end date.</errorMessage>
                         <formulaExpression>{!ValidateUpgradeDowngradeEffectiveStartDateFormula}</formulaExpression>
                     </validationRule>
+                </fields>
+                <fields>
+                    <name>UpgradeDowngradeOutreachSourceCodeId</name>
+                    <extensionName>flowruntime:lookup</extensionName>
+                    <fieldType>ComponentInstance</fieldType>
+                    <inputParameters>
+                        <name>fieldApiName</name>
+                        <value>
+                            <stringValue>OutreachSourceCodeId</stringValue>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>label</name>
+                        <value>
+                            <stringValue>Source Code</stringValue>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>objectApiName</name>
+                        <value>
+                            <stringValue>GiftCommitmentSchedule</stringValue>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>maxValues</name>
+                        <value>
+                            <numberValue>1.0</numberValue>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>recordId</name>
+                        <value>
+                            <elementReference>UpgradeDowngradeSelectSchdDataTable.firstSelectedRow.OutreachSourceCodeId</elementReference>
+                        </value>
+                    </inputParameters>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>true</isRequired>
+                    <storeOutputAutomatically>true</storeOutputAutomatically>
                 </fields>
                 <fields>
                     <name>UpgradeDowngradeUpdateReasonPicklist</name>
